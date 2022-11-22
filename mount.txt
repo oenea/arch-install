@@ -1,0 +1,19 @@
+if [ ${_FILESYSTEM} == "btrfs" ]; then
+    for i in ${_SUBVOLUMES}; do
+        a
+    ${_FILESYSTEM} subvolume create 
+
+
+
+
+
+
+
+
+elif [ ${_FILESYSTEM} == "ext4" ]; then
+    mount ${_ROOT} /mnt
+fi
+
+mkdir /mnt/boot
+mount ${_EFI} /mnt/boot
+

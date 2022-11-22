@@ -1,7 +1,10 @@
-#!/bin/sh
-DRIVE="/dev/sda"
-HOSTNAME="hades"
-USERNAME="oenea"
-LOCALE="pl_PL.UTF-8"
-PASSWORD="a"
-LOCAL_EDITOR="nvim"
+_DRIVE="/dev/sda"
+_HOSTNAME="hades"
+_USERNAME="oenea"
+_LOCAL_ZONE="Europe/Warsaw"
+_LOCALE="pl_PL.UTF-8"
+_PASSWORD="a"
+_LOCAL_EDITOR="nvim"
+_DNS="8.8.8.8"
+_SUBVOLUMES=("home" "etc" ".snapshots" "var/cache" "var/lib/libvirt" "var/log" "var/tmp")
+_BOOTLOADER="systemd-boot"

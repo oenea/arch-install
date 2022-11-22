@@ -1,0 +1,13 @@
+_EFI=$(fdisk -l | grep ${DRIVE} | grep EFI | grep -oh "\w*/dev/\w*")
+_SWAP=$(fdisk -l | grep ${DRIVE} | grep swap | grep -oh "\w*/dev/\w*")
+_ROOT=$(fdisk -l | grep ${DRIVE} | grep root | grep -oh "\w*/dev/\w*")
+
+mkfs.vfat -F 32 -n EFI ${_DRIVE}
+
+mkfs.${_FILESYSTEM} -f -L ROOT ${_ROOT}
+
+if [ ${_SWAP} != '' ]; then
+    mkswap ${_SWAP}
+    swapon ${_SWAP}
+fi
+

@@ -1,0 +1,24 @@
+
+
+
+genfstab -U -p /mnt >> /mnt/etc/fstab
+
+arch-chroot /mnt /bin/sh <<EOF
+
+# bootloader-section
+. bootloader.txt
+
+# setup-locale
+ln -sf /usr/share/zoneinfo/${_LOCAL_ZONE} /etc/localtime
+hwclock --systohc --localtime
+printf "${HOSTNAME}" > /etc/hostname
+
+printf "${_DNS}" > /etc/resolv.conf
+cat > /etc/hosts <<EOF
+127.0.0.1 localhost
+::1       localhost
+127.0.1.1 ${_HOSTNAME}.localdomain ${_HOSTNAME}
+EOF
+
+
+

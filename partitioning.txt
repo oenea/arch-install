@@ -1,0 +1,30 @@
+# partitioning
+
+fdisk ${DRIVE}
+g # GPT-partititon
+
+n    #
+1    #
++1G  # efi-partition-size
+
+n    #
+2    #
++32G # swap-parition-size
+
+n    #
+3    # root-partition
+
+t
+1    # first-partition
+1    # efi-system
+
+t
+2    # second-partition
+19   # swap
+
+t
+3    # third-partition
+23   # linux-root(x86-64)
+
+w # write-to-drive
+
