@@ -1,0 +1,5 @@
+#!/bin/sh
+git clone https://git.suckless.org/dwm
+git clone https://git.suckless.org/st
+git clone https://git.suckless.org/dmenu
+pacman -S xorg-server xorg-xinit libx11 libxinerama libxft

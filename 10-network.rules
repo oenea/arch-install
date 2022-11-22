@@ -1,0 +1,2 @@
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="c8:60:00:69:cb:df", NAME="eth"
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="00:0e:c6:cd:cb:8e", NAME="eth-usb"

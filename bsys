@@ -1,0 +1,16 @@
+#!/bin/sh
+cat > /etc/systemd/system/eth-set.service <<EOF
+[Unit]
+Description=setup_ethernet_connection
+
+[Service]
+ExecStart=/bin/sh /usr/bin/eth-set.sh
+
+[Install]
+WantedBy=multi-user.target
+EOF
+cp -v eth-set.sh /usr/bin/
+systemctl enable eth-set
+systemctl restart eth-set 
+systemctl status eth-set
+ping wikipedia.org

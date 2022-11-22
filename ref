@@ -1,0 +1,2 @@
+#!/bin/sh
+reflector --verbose --protocol https --age 19 -n 30 --download-timeout 60 --ipv4 --country Poland --sort rate --save /etc/pacman.d/mirrorlist

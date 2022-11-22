@@ -1,0 +1,27 @@
+# obligatory
+base linux linux-firmware
+
+# necessary
+intel-ucode openssh git sudo networkmanager neovim
+
+# btrfs-tools
+btrfs-progs
+
+# useful-apps
+sxiv tree htop wget python yt-dlp zsh curl man tldr shellcheck
+#imv
+
+# fonts
+terminus-font
+
+# terminal-emulators
+#alacritty
+
+# dwm-dependencies
+xorg-server xorg-xinit libx11 libxinerama libxft
+
+# flex
+neofetch
+
+# gui-apps
+firefox mpv 

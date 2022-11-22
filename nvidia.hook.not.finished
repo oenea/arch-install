@@ -1,0 +1,15 @@
+[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+target=nvidia
+Target=linux
+# change linux part above and in the exec line if a different kernel is used
+
+[Action]
+Description=Update NVIDIA module in initcpio
+Depends=mkinitcpio
+When=PostTransacion
+NeedsTargets
+Exec=bin/sh -c 'while read -r trg; do case $trg in linux) exit 0; esac; done; /usr/bin/mkinitcpio -P'1
